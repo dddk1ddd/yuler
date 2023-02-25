@@ -44,12 +44,12 @@ def do_links():
         data = res.get_data()
         soup = BeautifulSoup(data, "lxml")
         title = soup.find('title')
-        # bad links are titled 'YouTube'
+        # bad links are titled ' - YouTube'
+        # good links have other titles
         if str(title) != "<title> - YouTube</title>":
             print("Title: " + str(title))
             url_list.append("http://www.youtube.com/watch?v=" + x)
             print("CHECK -> http://www.youtube.com/watch?v=" + x)
-        # good links have other titles
         else:
             url_listb.append("http://www.youtube.com/watch?v=" + x)
 
